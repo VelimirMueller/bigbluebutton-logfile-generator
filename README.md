@@ -1,5 +1,7 @@
 #UPDATES: 
 ##04.04.2021 
+
+
 - Implementation of error Messages for each Module-Function
 - added helpers-Module: class DirMaker()
 - creates for each day a new directory - naming convention: yyyy-mm-dd
@@ -35,8 +37,10 @@ __________________________________________________________________
 - if you don´t see something like this: git version 2.29...:
 
     
+
     download git installer:
     https://git-scm.com/download/win
+
 
 
 ####Linux (Ubuntu 16.04+) (shell command installation):
@@ -50,8 +54,10 @@ __________________________________________________________________
 - use following commands in your terminal:
 
 
+
     sudo apt-get update
     sudo apt-get install git-core
+
     
 ___________________________________________
 ###1.2 Install Python (optional)
@@ -65,8 +71,10 @@ ___________________________________________
 
 - install python3
 
+
     
     https://www.python.org/downloads/
+
 
 
 ####Linux (Ubuntu 16.04+) (shell command installation):
@@ -80,8 +88,10 @@ ___________________________________________
 - use following commands in your terminal:
 
 
+
     apt-get update
     apt-get install git-core
+
     
 ___________________________________________
 
@@ -95,6 +105,7 @@ ___________________________________________
 Win:
 
 
+
     python -m pip install PyPDF2
 
 
@@ -102,13 +113,18 @@ Win:
 Linux:
 
 
+
     python3 -m pip install PyPDF2
+
   
 
 ##2 Install
 
 ###2.1 Clone this repository to your BBB-Server
 
+
     https://github.com/VelimirMueller/bigbluebutton-logfile-generator.git 
+
+
 __________________________________________________________________
 __________________________________________________________________
