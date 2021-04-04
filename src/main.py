@@ -14,9 +14,9 @@ class Main():
     def __init__(self): #Setup
         self.setup_dir = DirMaker("../data/output/csv/", "../data/output/pdf/")
         self.lp = LogfileProcessor("../data/input/logfiles/production.small.log", "r")
-        self.csv_structure = [["Zeilennummer"], ["Datum"], ["Uhrzeit"], ["Zeitzone"], ["Raumname"],
-                                  ["Benutzername"],
-                                  ["Status"], ["Logfile_komplett \n"]]
+        self.csv_structure = [["Row"], ["Date"], ["Time"], ["Timezone"], ["Room_name"],
+                                  ["user_name"],
+                                  ["status"], ["full_log \n"]]
         self.csv = CsvProcessor(self.lp.sorted_data_array, self.csv_structure)
         self.csv_writer = CsvWriter(self.csv.dictionary.items(), self.setup_dir.aktuellesDatum)
         self.pdf = PdfProcessor(self.csv.dictionary.items())
@@ -48,6 +48,5 @@ x.start()
 t1 = time.process_time() - t0
 print("Time elapsed from program-start to end:PDF creation: ", t1 , "sec") # Messung der Zeit bis Ende mit Ausgabe
 
-print(x.pdf.cache[2])
 
 

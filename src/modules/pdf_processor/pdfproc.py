@@ -46,7 +46,6 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
 
                             self.new_counter += 0.25
                             self.len_counter += 1
-                    self.canvas.showPage()# neue Seite Schreiben
                     print("written pdf file start room: " + self.pdf_path + str(self.aktuellesDatum) + "/" + str(
                         key) + ".pdf")
 
@@ -65,7 +64,6 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
 
                             self.new_counter += 0.25
                             self.len_counter += 1
-                    self.canvas.showPage()# neue Seite Schreiben
                     print("written pdf file joining: " + self.pdf_path + str(self.aktuellesDatum) + "/" + str(
                         key) + ".pdf")
 
@@ -84,7 +82,6 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
 
                             self.new_counter += 0.25
                             self.len_counter += 1
-                    self.canvas.showPage()# neue Seite Schreiben
                     print("written pdf file has left: " + self.pdf_path + str(self.aktuellesDatum) + "/" + str(
                         key) + ".pdf")
 

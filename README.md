@@ -22,13 +22,13 @@ Now we have login/logout lists of all rooms on our bigbluebutton server
 
 __________________________________________________________________
 __________________________________________________________________
-##1. Getting Started
+1. Getting Started
 
-###Prerequisites - Step 1
+Prerequisites - Step 1
 
-###1.1 Install Git (optional)
+1.1 Install Git (optional)
   
-####Windows (download installer):
+Windows (download installer):
 
 - install git
 
@@ -43,7 +43,7 @@ __________________________________________________________________
 
 
 
-####Linux (Ubuntu 16.04+) (shell command installation):
+Linux (Ubuntu 16.04+) (shell command installation):
   
 - open console/shell
 
@@ -60,8 +60,8 @@ __________________________________________________________________
 
     
 ___________________________________________
-###1.2 Install Python (optional)
-####Windows (download installer):
+1.2 Install Python (optional)
+Windows (download installer):
 
 - open cmd
 
@@ -77,7 +77,7 @@ ___________________________________________
 
 
 
-####Linux (Ubuntu 16.04+) (shell command installation):
+Linux (Ubuntu 16.04+) (shell command installation):
   
 - open console/shell 
 
@@ -98,7 +98,7 @@ ___________________________________________
 
 
 
-###Step 2
+Step 2
 
 - install python pdf module with following command in your terminal:
 
@@ -118,12 +118,41 @@ Linux:
 
   
 
-##2 Install
+2 Install
 
-###2.1 Clone this repository to your BBB-Server
+2.1 Clone this repository to your BBB-Server
 
 
     https://github.com/VelimirMueller/bigbluebutton-logfile-generator.git 
+
+
+
+2.2 Place your input Bigbluebutton logfile
+(on your server greenlight/log/production.log) in the data/input/logfiles directory of this application
+
+Attention: ! you need a custom greenlight instance running !
+https://docs.bigbluebutton.org/greenlight/gl-customize.html
+
+2.3 Setup the application
+
+- modify file - go to directory: src/main.py and modfiy following line:
+
+replace example.log with your file and path in main.py:
+
+    
+    class Main(...
+    def __init__(...
+        self.set...
+        self.lp = LogfileProcessor("../data/input/logfiles/example.log", "r")
+
+
+2.4 test the aplpication
+
+open terminal and type:
+
+    
+    cd "path of your logfile processor aplication"
+    python3 main.py
 
 
 __________________________________________________________________
