@@ -9,10 +9,10 @@ class DirMaker():
         self.paths =[self.csv_path, self.pdf_path]
         self.name = "DirMaker"
 
-    def get_today(self):
+    def get_today(self): #Tagesdatum als string ausgeben
         return str(self.aktuellesDatum)
 
-    def create_dir(self):
+    def create_dir(self): #neues Verzeichnis erstellen - akt Datum: yyyy-mm-dd
         for path in self.paths:
             try:
                 os.mkdir(path)

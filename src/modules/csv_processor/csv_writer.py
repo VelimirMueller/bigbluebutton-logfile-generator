@@ -3,7 +3,7 @@ class CsvWriter(): #CsvWriter Klasse -> erstelle CSVs
         self.aktuellesDatum = aktuellesDatum
         self.data_input = data_input # dictionary aus csvproc.py
         self.csv_writer_cache = [] #Kontrollstruktur
-        self.csv_path = "../csv/" + str(self.aktuellesDatum) #Pfad des Outputs
+        self.csv_path = "../data/output/csv/" + str(self.aktuellesDatum) #Pfad des Outputs
         self.csv_mode = "w" #w=write, a=append, x=if doesnt exist ->, r=read
         self.name = "CsvWriter"
 

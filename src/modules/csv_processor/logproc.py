@@ -13,7 +13,7 @@ class LogfileProcessor(): # LogfileProcessor Klasse -> bereitet Daten für CsvPr
                     self.data_array.append(log)
             logfile.close()
         except:
-            print("Error in class: " + self.name + "reader() error. Please fix Code")
+            print("Error in class: " + self.name + " - reader() error. Please fix Code")
         else:
             print("class: " + self.name + " function: reader()-executed succesfully")
 

@@ -11,10 +11,9 @@ t0= time.process_time() # Messung der Zeit von Start
 
 
 class Main():
-
     def __init__(self): #Setup
-        self.setup_dir = DirMaker("../csv/", "../pdf/")
-        self.lp = LogfileProcessor("../logfiles/production.small.log", "r")
+        self.setup_dir = DirMaker("../data/output/csv/", "../data/output/pdf/")
+        self.lp = LogfileProcessor("../data/input/logfiles/production.small.log", "r")
         self.csv_structure = [["Zeilennummer"], ["Datum"], ["Uhrzeit"], ["Zeitzone"], ["Raumname"],
                                   ["Benutzername"],
                                   ["Status"], ["Logfile_komplett \n"]]
@@ -48,5 +47,7 @@ x = Main()
 x.start()
 t1 = time.process_time() - t0
 print("Time elapsed from program-start to end:PDF creation: ", t1 , "sec") # Messung der Zeit bis Ende mit Ausgabe
+
+print(x.pdf.cache[2])
 
 
