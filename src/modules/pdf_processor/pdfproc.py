@@ -89,8 +89,9 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
 
                     self.canvas.save()# Seite erstellen
                 pdffile.close() #PDF schließen
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - create_new_pdf() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: - create_new_pdf() executed succesfully")
 

@@ -12,6 +12,10 @@ Based on the dictionary all data will be processed to seperated room_id .csv fil
 Now we have login/logout lists of all rooms on our bigbluebutton server
 
 __________________________________________________________________
+
+UPDATE: 
+- Readme: Added Troubleshooting - Added Install Guide 
+- Codebase: Updated Error Handling to CLI out / updated directorys in files / 
 __________________________________________________________________
 1. Getting Started
 
@@ -81,7 +85,9 @@ Linux (Ubuntu 16.04+) (shell command installation):
 
 
     apt-get update
-    apt-get install git-core
+    apt-get upgrade 
+    apt-get install python3.9
+    apt-get install python3.9-distutils
 
     
 ___________________________________________
@@ -97,7 +103,8 @@ Win:
 
 
 
-    python -m pip install PyPDF2
+    python3 -m pip install PyPDF2
+    python3 -m pip install reportlab
 
 
 
@@ -106,6 +113,7 @@ Linux:
 
 
     python3 -m pip install PyPDF2
+    python3 -m pip install reportlab
 
   
 
@@ -144,6 +152,28 @@ open terminal and type:
     
     cd "path of your logfile processor aplication"
     python3 main.py
+
+-------------------------------------------------------------------
+if you encounter any troubles - follow this guide:
+
+
+
+Troubleshooting:
+    
+
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get install python3.9
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2
+    sudo update-alternatives --config python
+    sudo apt-get install python3.9-distutils
+
+    ttributeError: module 'platform' has no attribute 'linux_distribution'        
+    
+    sudo apt remove python3-pip
+    sudo python3.9 -m easy_install pip
+    python -m pip install PyPDF2
+    python -m pip install reportlab
 
 
 __________________________________________________________________

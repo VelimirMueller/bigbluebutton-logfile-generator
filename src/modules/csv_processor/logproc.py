@@ -12,8 +12,9 @@ class LogfileProcessor(): # LogfileProcessor Klasse -> bereitet Daten für CsvPr
                 for log in logfile:
                     self.data_array.append(log)
             logfile.close()
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - reader() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: reader()-executed succesfully")
 
@@ -22,8 +23,9 @@ class LogfileProcessor(): # LogfileProcessor Klasse -> bereitet Daten für CsvPr
             for entry in self.data_array:
                 if entry.find("is joining") > -1 or entry.find("has left") > -1 or entry.find("is starting") > -1:
                     self.sorted_data_array.append(entry)
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - sort() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: sort() executed succesfully")
 
@@ -31,8 +33,9 @@ class LogfileProcessor(): # LogfileProcessor Klasse -> bereitet Daten für CsvPr
         try:
             for entry in self.sorted_data_array:
                 print(entry)
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - return_data() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: - return_data() executed succesfully")
 

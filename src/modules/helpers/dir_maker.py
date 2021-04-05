@@ -16,7 +16,8 @@ class DirMaker():
         for path in self.paths:
             try:
                 os.mkdir(path)
-            except OSError:
+            except OSError as error:
                 print("Creation of the directory %s failed" % path)
+                print("error code: " + str(error))
             else:
                 print("class: " + self.name + " function: - create_dir() executed succesfully. Created the directory %s " % path)

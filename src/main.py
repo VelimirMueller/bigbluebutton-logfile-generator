@@ -1,13 +1,13 @@
 
 import time # performance Messung
 #module importieren
-from src.modules.csv_processor.logproc import LogfileProcessor
-from src.modules.csv_processor.csvproc import CsvProcessor
-from src.modules.csv_processor.csv_writer import CsvWriter
-from src.modules.pdf_processor.pdfproc import PdfProcessor
-from src.modules.helpers.dir_maker import DirMaker
+from modules.csv_processor.logproc import LogfileProcessor
+from modules.csv_processor.csvproc import CsvProcessor
+from modules.csv_processor.csv_writer import CsvWriter
+from modules.pdf_processor.pdfproc import PdfProcessor
+from modules.helpers.dir_maker import DirMaker
 import sys
-sys.path.insert(0, "../")
+sys.path.insert(0, "../src")
 
 t0= time.process_time() # Messung der Zeit von Start
 
@@ -15,7 +15,7 @@ t0= time.process_time() # Messung der Zeit von Start
 class Main():
     def __init__(self): #Setup
         self.setup_dir = DirMaker("../data/output/csv/", "../data/output/pdf/")
-        self.lp = LogfileProcessor("../data/input/logfiles/production.small.log", "r")
+        self.lp = LogfileProcessor("../data/input/logfiles/production.log", "r")
         self.csv_structure = [["Row"], ["Date"], ["Time"], ["Timezone"], ["Room_name"],
                                   ["user_name"],
                                   ["status"], ["full_log \n"]]

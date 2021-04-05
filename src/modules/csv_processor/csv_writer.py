@@ -16,8 +16,9 @@ class CsvWriter(): #CsvWriter Klasse -> erstelle CSVs
                             if key in element[1][counter][0]: #nur logfileeinträge die zur room_id gehören
                                 csvfile.write(str(element[1][counter][0])) #schreibvorgang
                 csvfile.close()
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - create_csv() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: - create_csv() executed succesfully")
 

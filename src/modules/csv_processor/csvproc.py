@@ -26,8 +26,9 @@ class CsvProcessor(): #CsvProcessor Klasse -> bereitet Daten für CsvWriter Klas
                     self.data_array[6].append("start room")  # status
                 self.data_array[7].append(data.replace(";", " / ")) #komplettes Logfile
                 self.iterator = self.iterator + 1 #Zählvariable ++
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - sort_data() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: - sort_data() executed succesfully")
 
@@ -44,8 +45,9 @@ class CsvProcessor(): #CsvProcessor Klasse -> bereitet Daten für CsvWriter Klas
                                     self.data_array[2][row] + ";" + self.data_array[3][row] + ";" +
                                     str(self.data_array[4][row]) + ";" + self.data_array[5][row] + ";" +
                                     self.data_array[6][row] + ";" + self.data_array[7][row]])
-        except:
+        except OSError as error:
             print("Error in class: " + self.name + " - room_dict() error. Please fix Code")
+            print("error code: " + str(error))
         else:
             print("class: " + self.name + " function: - room_dict() executed succesfully")
 
