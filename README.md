@@ -1,12 +1,3 @@
-#UPDATES: 
-##04.04.2021 
-
-
-- Implementation of error Messages for each Module-Function
-- added helpers-Module: class DirMaker()
-- creates for each day a new directory - naming convention: yyyy-mm-dd
-
-
 #DOCUMENTATION
 ##Participant List Generator
 
@@ -146,7 +137,7 @@ replace example.log with your file and path in main.py:
         self.lp = LogfileProcessor("../data/input/logfiles/example.log", "r")
 
 
-2.4 test the aplpication
+2.4 test the application
 
 open terminal and type:
 

@@ -5,7 +5,6 @@ from reportlab.pdfbase import pdfmetrics #format pdf
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont #zeichensatz
 from datetime import date
 
-
 class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
     def __init__(self, input_data):
         self.input_data = input_data
@@ -15,6 +14,9 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
         self.replab = pdfmetrics.registerFont(UnicodeCIDFont('HeiseiMin-W3')) #alle Sonderzeichen drucken
         self.aktuellesDatum = date.today()
         self.name = "PdfProcessor"
+        self.headline = "TEILNAHMELISTE"  # Überschrift
+        self.start_time = "Startzeit:"  # Erste Zeile: Startzeit des Raums
+        self.len_counter = 0
 
     def create_new_pdf(self):
         try:
@@ -23,13 +25,13 @@ class PdfProcessor(): #PdfProcessor Klasse -> schreibt pdf Dateien
                     self.replab
                     self.canvas = Canvas(self.pdf_path + "/" + str(self.aktuellesDatum) + "/" + str(key) + ".pdf", pagesize=LETTER) #in neues PDF
                     self.canvas.setFont("HeiseiMin-W3", 6)
-                    self.new_counter = self.counter #neue Datei, neuer iterator
-                    self.headline = "TEILNAHMELISTE"#Überschrift
-                    self.start_time = "Startzeit:" #Erste Zeile: Startzeit des Raums
+                    self.headline
+                    self.start_time
+                    self.len_counter
                     self.cache = [[], [], []]
-                    self.len_counter = 0
+                    self.new_counter = self.counter  # neue Datei, neuer iterator
                     self.canvas.drawString(4 * inch, (10.5 - self.new_counter) * inch, self.headline) # in PDF schreiben/zeichnen
-                    self.canvas.drawString(1 * inch, (10.25 - self.new_counter) * inch, self.start_time) # in PDF schreiben/zeichnen
+                    self.canvas.drawString(1 * inch, (10.25 - self.new_counter) * inch, self.start_time) # in PDF schreiben/zeichnenq
 
                     for val in value:
                         if self.len_counter > 0 and (self.len_counter % 33) == 0 > -1: # alle 35 Zeilen eine neue Seite anfangen

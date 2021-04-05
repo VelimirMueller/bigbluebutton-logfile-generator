@@ -6,6 +6,8 @@ from src.modules.csv_processor.csvproc import CsvProcessor
 from src.modules.csv_processor.csv_writer import CsvWriter
 from src.modules.pdf_processor.pdfproc import PdfProcessor
 from src.modules.helpers.dir_maker import DirMaker
+import sys
+sys.path.insert(0, "../")
 
 t0= time.process_time() # Messung der Zeit von Start
 
